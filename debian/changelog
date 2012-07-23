@@ -1,3 +1,10 @@
+udplog (1.8-3) lucid; urgency=low
+
+  * init script now checks the status using the PIDFILE inline with the
+    puppet template templates/udp2log/udp2log.init.erb
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 23 Jul 2012 15:25:15 +0000
+
 udplog (1.8-2) lucid; urgency=low
 
   * init script sets recv-queue to up to 128k based on rmem_max
