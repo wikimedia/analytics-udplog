@@ -1,5 +1,5 @@
 Source: udplog
-Section: unknown
+Section: net
 Priority: optional
 Maintainer: Tim Starling <tstarling@wikimedia.org>
 Build-Depends: debhelper (>= 5), g++, libboost-dev, libboost-program-options-dev, libboost-serialization-dev
