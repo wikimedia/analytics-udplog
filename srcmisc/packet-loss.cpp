@@ -48,7 +48,7 @@ const time_t reportInterval = 600;
 int main(int argc, char** argv)
 {
 	using namespace std;
-	
+
 	const size_t bufSize = 65536;
 	std::tr1::unordered_map<string, uint64_t> seqs;
 	char buffer[bufSize];
@@ -59,38 +59,37 @@ int main(int argc, char** argv)
 	time_t lastReportTime = 0;
 	time_t currentTime;
 	struct tm timeStruct;
-	
-    char defaultFieldDelimiter[] = " ";
-    char *fieldDelimiter;
 
-    printf("argc: %d\n", argc);
+	char defaultFieldDelimiter[] = " ";
+	char *fieldDelimiter;
 
-    if (argc < 2) {
-        cerr << "usage: packet-loss <sample-rate> [delimiter]\n";
-        exit(1);
-    }
+	if (argc < 2) {
+		cerr << "usage: packet-loss <sample-rate> [delimiter]\n";
+		exit(1);
+	}
 
-    try {
-        sampleRate = boost::lexical_cast<int>(argv[1]);
-    } catch (...) {
-        cerr << "packet-loss: invalid sample rate\n";
-        exit(1);
-    }
-    if (sampleRate < 1) {
-        cerr << "packet-loss: invalid sample rate\n";
-        exit(1);
-    }
+	try {
+		sampleRate = boost::lexical_cast<int>(argv[1]);
+	} catch (...) {
+		cerr << "packet-loss: invalid sample rate\n";
+		exit(1);
+	}
+	if (sampleRate < 1) {
+		cerr << "packet-loss: invalid sample rate\n";
+		exit(1);
+	}
 
-    if (argc == 3) {
-        fieldDelimiter = argv[2];
-    }
-    else {
-        fieldDelimiter = defaultFieldDelimiter;
-    }
-     // use \t if it was literally passed in.
-    if (strcmp(fieldDelimiter, "\\t") == 0) {
-        fieldDelimiter = (char *)"\t";
-    }
+	if (argc == 3) {
+		fieldDelimiter = argv[2];
+	}
+	else {
+		fieldDelimiter = defaultFieldDelimiter;
+	}
+	// use \t if it was literally passed in.
+	if (strcmp(fieldDelimiter, "\\t") == 0) {
+		fieldDelimiter = (char *)"\t";
+	}
+
 
 	// Don't take all day due to http://gcc.gnu.org/bugzilla/show_bug.cgi?id=45574
 	ios::sync_with_stdio(false);
