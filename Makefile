@@ -43,3 +43,4 @@ udp2log/udp2log: $(UDP2LOG_OBJS)
 install:
 	install log2udp $(DESTDIR)/usr/bin/log2udp
 	install udp2log/udp2log $(DESTDIR)/usr/bin/udp2log
+	install packet-loss $(DESTDIR)/usr/bin/packet-loss

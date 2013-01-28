@@ -1,3 +1,10 @@
+udplog (1.8-5) precise-wikimedia; urgency=low
+
+  * Modified packet-loss filter to accept field delimiter CLI option.
+  * The packet-loss filter is now included in this package.
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Mon, 28 Jan 2013 17:00:00 -0500
+
 udplog (1.8-4) precise-wikimedia; urgency=low
 
   * Fixed section and distro to make reprepro happy
