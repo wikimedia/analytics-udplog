@@ -4,7 +4,7 @@
 char editparam[]="action=submit";
 char editattempt[]="action=edit";
 
-main() {
+int main(int argc, char **argv) {
 	char line[10240];
 	char code[10240];
 	char *codestart, *codeend;
@@ -13,6 +13,9 @@ main() {
 	while (!feof(stdin)) {
 		char *r;
 		r=fgets(line, 10000, stdin);
+		if (!r) {
+			break;
+		}
 
 		int pos=0;
 		t = line;
@@ -23,7 +26,7 @@ main() {
 		while(pos++<5) {
 			if (!t)
 				continue;
-			t = strstr(t, " ");
+			t = strstr(t, "\t");
 			if (!t)
 				continue;
 			t++;
@@ -31,7 +34,7 @@ main() {
 		if (!t)
 			continue;
 		codestart = t;
-		codeend = strstr(codestart, " ");
+		codeend = strstr(codestart, "\t");
 		if (!codeend)
 			continue;
 
@@ -43,4 +46,5 @@ main() {
 			fflush(stdout);
 		}
 	}
+	return 0;
 }
