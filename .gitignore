@@ -1,0 +1,12 @@
+# Globally ignoring generated object files
+*.o
+
+# Ignoring generated binaries in the project root
+/delta
+/log2udp
+/mime-types
+/packet-loss
+/page-views
+/slowpipe
+/slowread
+/udprecv
