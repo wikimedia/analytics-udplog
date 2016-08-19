@@ -38,7 +38,7 @@ slowpipe: $(SLOWPIPE_OBJS)
 	g++ $(CFLAGS) $(SLOWPIPE_OBJS) -lrt -o slowpipe
 
 udp2log/udp2log: $(UDP2LOG_OBJS)
-	g++ $(CFLAGS) -o udp2log/udp2log $(UDP2LOG_OBJS) -lboost_program_options -lrt
+	g++ $(CFLAGS) -o udp2log/udp2log $(UDP2LOG_OBJS) -lboost_system -lboost_program_options -lrt
 
 install:
 	install log2udp $(DESTDIR)/usr/bin/log2udp
