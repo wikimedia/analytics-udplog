@@ -1,5 +1,5 @@
 #include <iostream>
-#include <boost/tr1/unordered_map.hpp>
+#include <boost/unordered/unordered_map.hpp>
 #include <map>
 #include <stdint.h>
 #include <boost/lexical_cast.hpp>
@@ -10,7 +10,7 @@
 
 using std::strtok;
 
-typedef std::tr1::unordered_map<std::string, uint64_t>::iterator SeqIterator;
+typedef boost::unordered::unordered_map<std::string, uint64_t>::iterator SeqIterator;
 
 struct HostData {
 	HostData() : received(1), sent(0) {}
@@ -21,7 +21,7 @@ struct HostData {
 	// Number of packets sent, estimated from sequence numbers (unsampled)
 	int64_t sent;
 };
-typedef std::tr1::unordered_map<std::string, HostData>::iterator HostIterator;
+typedef boost::unordered::unordered_map<std::string, HostData>::iterator HostIterator;
 
 struct SampleData {
 	SampleData() : total(0), outOfOrder(0), invalid(0) {}
@@ -35,7 +35,7 @@ struct SampleData {
 	// Number of sampled lines which were invalid
 	int64_t invalid;
 
-	std::tr1::unordered_map<std::string, HostData> hosts;
+	boost::unordered::unordered_map<std::string, HostData> hosts;
 
 	void Report(const struct tm * timeStruct, int sampleRate);
 	void PrintRatio(int64_t numerator, int64_t denominator, double numeratorError);
@@ -50,7 +50,7 @@ int main(int argc, char** argv)
 	using namespace std;
 
 	const size_t bufSize = 65536;
-	std::tr1::unordered_map<string, uint64_t> seqs;
+	boost::unordered::unordered_map<string, uint64_t> seqs;
 	char buffer[bufSize];
 	int sampleRate;
 

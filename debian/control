@@ -2,10 +2,13 @@ Source: udplog
 Section: net
 Priority: optional
 Maintainer: Tim Starling <tstarling@wikimedia.org>
-Build-Depends: debhelper (>= 5), g++, libboost-dev, libboost-program-options-dev, libboost-serialization-dev, libboost-system-dev
+Build-Depends: debhelper-compat (= 12), g++, libboost-dev, libboost-program-options-dev, libboost-serialization-dev, libboost-system-dev
 Standards-Version: 3.7.2
 
 Package: udplog
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.0-6)
 Description: Utilities for UDP logging
+ udp2log is a tool that receives logs via UDP and sends them to a processing,
+ script that can, for example, write them to a specific file based on a
+ specific attribute in the log message.

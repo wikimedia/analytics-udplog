@@ -1,3 +1,17 @@
+udplog (1.9) buster-wikimedia; urgency=medium
+
+  * Switch to dh
+  * Switch to dpkg-source 3.0 (native) format
+
+ -- Taavi Väänänen <hi@taavi.wtf>  Thu, 04 Mar 2021 11:00:28 +0200
+
+udplog (1.8-5+deb10u1) buster-wikimedia; urgency=medium
+
+  * Rebuild for Buster T276421
+  * Adapt includes for modern Boost
+
+ -- Moritz Muehlenhoff <moritz@wikimedia.org>  Thu, 04 Mar 2021 08:52:50 +0000
+
 udplog (1.8-5~jessie1) jessie-wikimedia; urgency=low
 
   * Modified packet-loss filter to accept field delimiter CLI option.
