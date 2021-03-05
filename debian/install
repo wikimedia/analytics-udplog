@@ -1,1 +1,2 @@
-udp2log/udp2log.conf.default etc/udp2log
+#!/usr/bin/dh-exec
+udp2log/udp2log.conf.default => etc/udp2log
