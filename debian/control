@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: udplog
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.0-6)
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Utilities for UDP logging
  udp2log is a tool that receives logs via UDP and sends them to a processing,
  script that can, for example, write them to a specific file based on a

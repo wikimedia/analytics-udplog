@@ -4,5 +4,5 @@
 %:
 	dh $@
 
-override_dh_installinit:
-	dh_installinit --name=udp2log
+override_dh_installsystemd:
+	dh_installsystemd --name=udp2log

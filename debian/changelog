@@ -1,3 +1,9 @@
+udplog (1.10) buster-wikimedia; urgency=medium
+
+  * Switch to systemd
+
+ -- Taavi Väänänen <hi@taavi.wtf>  Fri, 19 Mar 2021 22:07:30 +0200
+
 udplog (1.9) buster-wikimedia; urgency=medium
 
   * Switch to dh
