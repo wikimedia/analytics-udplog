@@ -1,8 +1,11 @@
-udplog (1.10) buster-wikimedia; urgency=medium
+udplog (1.10) UNRELEASED; urgency=medium
 
+  [Taavi Väänänen]
   * Switch to systemd
+  [John Bond]
+  * udplog: /etc/udp2log should be a folder not a file (T276622)
 
- -- Taavi Väänänen <hi@taavi.wtf>  Fri, 19 Mar 2021 22:07:30 +0200
+ -- John Bond <jbond@wikimedia.org>  Tue, 23 May 2023 18:32:18 +0200
 
 udplog (1.9) buster-wikimedia; urgency=medium
 

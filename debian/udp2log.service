@@ -3,7 +3,7 @@ Description=UDP log receiver (udp2log)
 After=syslog.target network.target
 
 [Service]
-ExecStart=/usr/bin/udp2log --config-file=/etc/udp2log --recv-queue=131072
+ExecStart=/usr/bin/udp2log --config-file=/etc/udp2log/udp2log.conf --recv-queue=131072
 Restart=on-failure
 RestartSec=10s
 
