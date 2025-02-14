@@ -1,4 +1,4 @@
-TARGETS = log2udp udprecv delta udp2log/udp2log packet-loss slowread slowpipe
+TARGETS = log2udp udprecv delta udp2log/udp2log packet-loss slowread slowpipe udp2log-demux
 SRCLIB_OBJS = srclib/HostEntry.o srclib/FileDescriptor.o srclib/IPAddress.o srclib/Socket.o srclib/SocketAddress.o srclib/PosixClock.o
 HOST_OBJS = srcmisc/host.o $(SRCLIB_OBJS)
 LOG2UDP_OBJS = srcmisc/log2udp.o $(SRCLIB_OBJS)
@@ -6,6 +6,7 @@ UDPRECV_OBJS = srcmisc/udprecv.o $(SRCLIB_OBJS)
 SLOWREAD_OBJS = srcmisc/slowread.o $(SRCLIB_OBJS)
 SLOWPIPE_OBJS = srcmisc/slowpipe.o $(SRCLIB_OBJS)
 UDP2LOG_OBJS = udp2log/udp2log.o udp2log/LogProcessor.o udp2log/Udp2LogConfig.o $(SRCLIB_OBJS)
+DEMUX_OBJS = srcmisc/demux.o $(SRCLIB_OBJS)
 CFLAGS:=$(CFLAGS) -Wall
 
 all: $(TARGETS)
@@ -40,7 +41,11 @@ slowpipe: $(SLOWPIPE_OBJS)
 udp2log/udp2log: $(UDP2LOG_OBJS)
 	g++ $(CFLAGS) -o udp2log/udp2log $(UDP2LOG_OBJS) -lboost_system -lboost_program_options -lrt
 
+udp2log-demux: $(DEMUX_OBJS)
+	g++ $(CFLAGS) $(DEMUX_OBJS) -lboost_program_options -o udp2log-demux
+
 install:
 	install log2udp $(DESTDIR)/usr/bin/log2udp
 	install udp2log/udp2log $(DESTDIR)/usr/bin/udp2log
 	install packet-loss $(DESTDIR)/usr/bin/packet-loss
+	install udp2log-demux $(DESTDIR)/usr/bin/udp2log-demux
